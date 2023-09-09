@@ -3,6 +3,9 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 
+export const runtime = 'edge' // 'nodejs' (default) | 'edge'
+
+
 function PostCard(post: Post) {
   const Content = getMDXComponent(post.body.code);
 
